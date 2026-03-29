@@ -20,8 +20,9 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #ff6b6b, #ff9ff3, #54a0ff);
-            overflow: hidden;
+            overflow: scroll;
             text-align: center;
+            padding-bottom: 20px;
         }
 
         /* title */
@@ -113,27 +114,29 @@
         </div>
 
         <!-- 💖 SHOW SHAYRI BUTTON -->
-        <button onclick="document.getElementById('shayriDiv').style.display='block'">
+        <button onclick="document.getElementById('messageDiv').hidden = false">
             Click here for more surprise 💖
         </button>
 
-        <!-- 💖 SHAYRI (Initially Hidden) -->
-        <div id="shayriDiv" class="shayri" style="display:none;">
-            Vaibhav ke khwabon ki roshni hai Aanvi,<br>
-            Uski har muskaan ki wajah bani hai Aanvi.<br>
-            Do dil mile toh kahani ban gayi pyaar ki,<br>
-            Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
+        <div hidden id="messageDiv">
+            <!-- 💖 SHAYRI -->
+            <div id="shayriDiv" class="shayri">
+                Vaibhav ke khwabon ki roshni hai Aanvi,<br>
+                Uski har muskaan ki wajah bani hai Aanvi.<br>
+                Do dil mile toh kahani ban gayi pyaar ki,<br>
+                Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
 
-            Rab ne bhi fursat se likhi hogi ye daastaan,<br>
-            Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
-            Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
-            In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
-        </div>
+                Rab ne bhi fursat se likhi hogi ye daastaan,<br>
+                Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
+                Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
+                In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
+            </div>
 
-        <!-- 🎆 FUN ENDING MESSAGE -->
-        <div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
-            🎇 Ab crackers ke saath so jao, <br>
-            Baaki surprises December me dekhenge! 😉
+            <!-- 🎆 FUN ENDING MESSAGE -->
+            <div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
+                🎇 Ab crackers ke saath so jao, <br>
+                Baaki surprises December me dekhenge! 😉
+            </div>
         </div>
 
         <!-- 🎇 FIREWORKS -->
