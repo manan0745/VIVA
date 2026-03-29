@@ -1,201 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>💍 #VIVA Proposal Day ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💍 #VIVA Proposal Day ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#ff6b6b,#ff9ff3,#54a0ff);
-    overflow:hidden;
-    text-align:center;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ff9ff3, #54a0ff);
+            overflow: hidden;
+            text-align: center;
+        }
 
-/* title */
-.title{
-    font-family:'Dancing Script',cursive;
-    font-size:3rem;
-    color:white;
-    margin-top:20px;
-}
+        /* title */
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: white;
+            margin-top: 20px;
+        }
 
-/* button */
-button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    background:#fff;
-    color:#ff4d6d;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
-}
-button:hover{
-    transform: scale(1.05);
-}
+        /* button */
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #fff;
+            color: #ff4d6d;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-/* slideshow */
-.slideshow{
-    margin:20px auto;
-    width:320px;
-    height:320px;
-    border-radius:20px;
-    overflow:hidden;
-    border:4px solid #fff;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    background: linear-gradient(135deg, rgba(255,105,180,0.7), rgba(255,182,193,0.7));
-    padding:10px;
-}
-.slideshow img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:none;
-}
-.slideshow img:first-child { display: block; }
+        button:hover {
+            transform: scale(1.05);
+        }
 
-/* shayri */
-.shayri{
-    margin-top:20px;
-    font-size:1.2rem;
-    color:white;
-    line-height:1.5;
-}
+        /* slideshow */
+        .slideshow {
+            margin: 20px auto;
+            width: 320px;
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.7), rgba(255, 182, 193, 0.7));
+            padding: 10px;
+        }
 
-/* fireworks */
-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
-}
-</style>
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slideshow img:first-child {
+            display: block;
+        }
+
+        /* shayri */
+        .shayri {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: white;
+            line-height: 1.5;
+        }
+
+        /* fireworks */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- 🔒 Password Protection -->
-<script>
-let password = prompt("💍 Enter Password to view this Proposal:");
-if(password !== "VIVA2026"){
-    document.body.innerHTML="<h1 style='text-align:center;margin-top:50px;color:red'>Access Denied 🚫</h1>";
-    throw new Error("Access Denied");
-}
-</script>
+    <!-- 🔒 Password Protection -->
+    <script>
+        let password = prompt("💍 Enter Password to view this Proposal:");
+        if (password !== "VIVA2026") {
+            document.body.innerHTML = "<h1 style='text-align:center;margin-top:50px;color:red'>Access Denied 🚫</h1>";
+            throw new Error("Access Denied");
+        }
+    </script>
 
-<h1 class="title">💍 Proposal Day - #VIVA ❤️</h1>
+    <h1 class="title">💍 Proposal Day - #VIVA ❤️</h1>
 
-<button onclick="startExperience()">Click for Surprise 💖</button>
+    <button onclick="startExperience()">Click for Surprise 💖</button>
 
-<!-- 🎵 MUSIC -->
-<audio id="music" src="music.mp3" loop></audio>
+    <!-- 🎵 MUSIC -->
+    <audio id="music" src="music.mp3" loop></audio>
 
-<!-- 📸 SLIDESHOW (5 IMAGES) -->
-<div class="slideshow">
-    <img src="img1.jpg" alt="Vaibhav & Aanvi 1">
-    <img src="img2.jpg" alt="Vaibhav & Aanvi 2">
-    <img src="img3.jpg" alt="Vaibhav & Aanvi 3">
-    <img src="img4.jpg" alt="Vaibhav & Aanvi 4">
-    <img src="img5.jpg" alt="Vaibhav & Aanvi 5">
-</div>
+    <!-- 📸 SLIDESHOW (5 IMAGES) -->
+    <div class="slideshow">
+        <img src="img1.jpeg" alt="Vaibhav & Aanvi 1">
+        <img src="img2.jpeg" alt="Vaibhav & Aanvi 2">
+        <img src="img3.jpeg" alt="Vaibhav & Aanvi 3">
+        <img src="img4.jpeg" alt="Vaibhav & Aanvi 4">
+        <img src="img5.jpeg" alt="Vaibhav & Aanvi 5">
+    </div>
 
-<!-- 💖 SHOW SHAYRI BUTTON -->
-<button onclick="document.getElementById('shayriDiv').style.display='block'">
-    Click here for more surprise 💖
-</button>
+    <!-- 💖 SHOW SHAYRI BUTTON -->
+    <button onclick="document.getElementById('shayriDiv').style.display='block'">
+        Click here for more surprise 💖
+    </button>
 
-<!-- 💖 SHAYRI (Initially Hidden) -->
-<div id="shayriDiv" class="shayri" style="display:none;">
-Vaibhav ke khwabon ki roshni hai Aanvi,<br>
-Uski har muskaan ki wajah bani hai Aanvi.<br>
-Do dil mile toh kahani ban gayi pyaar ki,<br>
-Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
+    <!-- 💖 SHAYRI (Initially Hidden) -->
+    <div id="shayriDiv" class="shayri" style="display:none;">
+        Vaibhav ke khwabon ki roshni hai Aanvi,<br>
+        Uski har muskaan ki wajah bani hai Aanvi.<br>
+        Do dil mile toh kahani ban gayi pyaar ki,<br>
+        Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
 
-Rab ne bhi fursat se likhi hogi ye daastaan,<br>
-Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
-Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
-In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
-</div>
+        Rab ne bhi fursat se likhi hogi ye daastaan,<br>
+        Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
+        Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
+        In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
+    </div>
 
-<!-- 🎆 FUN ENDING MESSAGE -->
-<div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
-🎇 Ab crackers ke saath so jao, <br>
-Baaki surprises December me dekhenge! 😉
-</div>
+    <!-- 🎆 FUN ENDING MESSAGE -->
+    <div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
+        🎇 Ab crackers ke saath so jao, <br>
+        Baaki surprises December me dekhenge! 😉
+    </div>
 
-<!-- 🎇 FIREWORKS -->
-<canvas id="fireworks"></canvas>
+    <!-- 🎇 FIREWORKS -->
+    <canvas id="fireworks"></canvas>
 
-<script>
-function startExperience(){
-    document.getElementById("music").play();
-    startSlideshow();
-    startFireworks();
-}
+    <script>
+        function startExperience() {
+            document.getElementById("music").play();
+            startSlideshow();
+            startFireworks();
+        }
 
-/* 📸 SLIDESHOW */
-let slides=document.querySelectorAll(".slideshow img");
-let index=0;
+        /* 📸 SLIDESHOW */
+        let slides = document.querySelectorAll(".slideshow img");
+        let index = 0;
 
-function startSlideshow(){
-    slides[0].style.display="block";
-    setInterval(()=>{
-        slides[index].style.display="none";
-        index=(index+1)%slides.length;
-        slides[index].style.display="block";
-    },2000);
-}
+        function startSlideshow() {
+            slides[0].style.display = "block";
+            setInterval(() => {
+                slides[index].style.display = "none";
+                index = (index + 1) % slides.length;
+                slides[index].style.display = "block";
+            }, 2000);
+        }
 
-/* 🎇 FIREWORKS */
-const canvas=document.getElementById("fireworks");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+        /* 🎇 FIREWORKS */
+        const canvas = document.getElementById("fireworks");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-let particles=[];
-function createFirework(){
-    let x=Math.random()*canvas.width;
-    let y=Math.random()*canvas.height/2;
-    for(let i=0;i<50;i++){
-        particles.push({
-            x:x,
-            y:y,
-            speedX:(Math.random()-0.5)*5,
-            speedY:(Math.random()-0.5)*5,
-            life:100
+        let particles = [];
+        function createFirework() {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height / 2;
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: x,
+                    y: y,
+                    speedX: (Math.random() - 0.5) * 5,
+                    speedY: (Math.random() - 0.5) * 5,
+                    life: 100
+                });
+            }
+        }
+        function animateFireworks() {
+            ctx.fillStyle = "rgba(0,0,0,0.2)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.life--;
+                ctx.fillStyle = "white";
+                ctx.fillRect(p.x, p.y, 2, 2);
+                if (p.life <= 0) particles.splice(i, 1);
+            });
+            requestAnimationFrame(animateFireworks);
+        }
+        function startFireworks() {
+            setInterval(createFirework, 1000);
+            animateFireworks();
+        }
+
+        /* 🔹 Handle Window Resize */
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         });
-    }
-}
-function animateFireworks(){
-    ctx.fillStyle="rgba(0,0,0,0.2)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    particles.forEach((p,i)=>{
-        p.x+=p.speedX;
-        p.y+=p.speedY;
-        p.life--;
-        ctx.fillStyle="white";
-        ctx.fillRect(p.x,p.y,2,2);
-        if(p.life<=0) particles.splice(i,1);
-    });
-    requestAnimationFrame(animateFireworks);
-}
-function startFireworks(){
-    setInterval(createFirework,1000);
-    animateFireworks();
-}
-
-/* 🔹 Handle Window Resize */
-window.addEventListener('resize', ()=>{
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
-});
-</script>
+    </script>
 
 </body>
+
 </html>
