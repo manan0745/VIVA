@@ -44,12 +44,14 @@ button:hover{
 /* slideshow */
 .slideshow{
     margin:20px auto;
-    width:300px;
-    height:300px;
+    width:320px;
+    height:320px;
     border-radius:20px;
     overflow:hidden;
     border:4px solid #fff;
     box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, rgba(255,105,180,0.7), rgba(255,182,193,0.7));
+    padding:10px;
 }
 .slideshow img{
     width:100%;
@@ -103,8 +105,13 @@ if(password !== "VIVA2026"){
     <img src="img5.jpg" alt="Vaibhav & Aanvi 5">
 </div>
 
-<!-- 💖 SHAYRI -->
-<div class="shayri">
+<!-- 💖 SHOW SHAYRI BUTTON -->
+<button onclick="document.getElementById('shayriDiv').style.display='block'">
+    Click here for more surprise 💖
+</button>
+
+<!-- 💖 SHAYRI (Initially Hidden) -->
+<div id="shayriDiv" class="shayri" style="display:none;">
 Vaibhav ke khwabon ki roshni hai Aanvi,<br>
 Uski har muskaan ki wajah bani hai Aanvi.<br>
 Do dil mile toh kahani ban gayi pyaar ki,<br>
