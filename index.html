@@ -94,58 +94,61 @@
 <body>
 
     <!-- 🔒 Password Protection -->
+    <div hidden id="main">
+
+        <h1 class="title">💍 Proposal Day - #VIVA ❤️</h1>
+
+        <button onclick="startExperience()">Click for Surprise 💖</button>
+
+        <!-- 🎵 MUSIC -->
+        <audio id="music" src="music.mp3" loop></audio>
+
+        <!-- 📸 SLIDESHOW (5 IMAGES) -->
+        <div class="slideshow">
+            <img src="img1.jpeg" alt="Vaibhav & Aanvi 1">
+            <img src="img2.jpeg" alt="Vaibhav & Aanvi 2">
+            <img src="img3.jpeg" alt="Vaibhav & Aanvi 3">
+            <img src="img4.jpeg" alt="Vaibhav & Aanvi 4">
+            <img src="img5.jpeg" alt="Vaibhav & Aanvi 5">
+        </div>
+
+        <!-- 💖 SHOW SHAYRI BUTTON -->
+        <button onclick="document.getElementById('shayriDiv').style.display='block'">
+            Click here for more surprise 💖
+        </button>
+
+        <!-- 💖 SHAYRI (Initially Hidden) -->
+        <div id="shayriDiv" class="shayri" style="display:none;">
+            Vaibhav ke khwabon ki roshni hai Aanvi,<br>
+            Uski har muskaan ki wajah bani hai Aanvi.<br>
+            Do dil mile toh kahani ban gayi pyaar ki,<br>
+            Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
+
+            Rab ne bhi fursat se likhi hogi ye daastaan,<br>
+            Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
+            Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
+            In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
+        </div>
+
+        <!-- 🎆 FUN ENDING MESSAGE -->
+        <div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
+            🎇 Ab crackers ke saath so jao, <br>
+            Baaki surprises December me dekhenge! 😉
+        </div>
+
+        <!-- 🎇 FIREWORKS -->
+        <canvas id="fireworks"></canvas>
+    </div>
+
     <script>
         let password = prompt("💍 Enter Password to view this Proposal:");
+        // This is insecure, but who cares...
         if (password !== "VIVA2026") {
             document.body.innerHTML = "<h1 style='text-align:center;margin-top:50px;color:red'>Access Denied 🚫</h1>";
-            throw new Error("Access Denied");
+        } else {
+            document.getElementById("main").hidden = false;
         }
-    </script>
 
-    <h1 class="title">💍 Proposal Day - #VIVA ❤️</h1>
-
-    <button onclick="startExperience()">Click for Surprise 💖</button>
-
-    <!-- 🎵 MUSIC -->
-    <audio id="music" src="music.mp3" loop></audio>
-
-    <!-- 📸 SLIDESHOW (5 IMAGES) -->
-    <div class="slideshow">
-        <img src="img1.jpeg" alt="Vaibhav & Aanvi 1">
-        <img src="img2.jpeg" alt="Vaibhav & Aanvi 2">
-        <img src="img3.jpeg" alt="Vaibhav & Aanvi 3">
-        <img src="img4.jpeg" alt="Vaibhav & Aanvi 4">
-        <img src="img5.jpeg" alt="Vaibhav & Aanvi 5">
-    </div>
-
-    <!-- 💖 SHOW SHAYRI BUTTON -->
-    <button onclick="document.getElementById('shayriDiv').style.display='block'">
-        Click here for more surprise 💖
-    </button>
-
-    <!-- 💖 SHAYRI (Initially Hidden) -->
-    <div id="shayriDiv" class="shayri" style="display:none;">
-        Vaibhav ke khwabon ki roshni hai Aanvi,<br>
-        Uski har muskaan ki wajah bani hai Aanvi.<br>
-        Do dil mile toh kahani ban gayi pyaar ki,<br>
-        Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
-
-        Rab ne bhi fursat se likhi hogi ye daastaan,<br>
-        Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
-        Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
-        In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
-    </div>
-
-    <!-- 🎆 FUN ENDING MESSAGE -->
-    <div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
-        🎇 Ab so jao, <br>
-        Baaki surprises December me dekhenge! 😉
-    </div>
-
-    <!-- 🎇 FIREWORKS -->
-    <canvas id="fireworks"></canvas>
-
-    <script>
         function startExperience() {
             document.getElementById("music").play();
             startSlideshow();
