@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,18 +51,13 @@ button:hover{
     border:4px solid #fff;
     box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
-
 .slideshow img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:none;
 }
-
-/* show first image by default */
-.slideshow img:first-child {
-    display: block;
-}
+.slideshow img:first-child { display: block; }
 
 /* shayri */
 .shayri{
@@ -82,7 +76,6 @@ canvas{
 }
 </style>
 </head>
-
 <body>
 
 <!-- 🔒 Password Protection -->
@@ -112,15 +105,27 @@ if(password !== "VIVA2026"){
 
 <!-- 💖 SHAYRI -->
 <div class="shayri">
-#VIVA sirf ek hashtag nahi, ek khoobsurat ehsaas hai,<br>
-Vaibhav aur Aanvi ka pyaar hi unki sabse khaas pehchaan hai ❤️
+Vaibhav ke khwabon ki roshni hai Aanvi,<br>
+Uski har muskaan ki wajah bani hai Aanvi.<br>
+Do dil mile toh kahani ban gayi pyaar ki,<br>
+Mere bhai ki zindagi ki sabse haseen saugaat hai Aanvi.<br><br>
+
+Rab ne bhi fursat se likhi hogi ye daastaan,<br>
+Jahan Vaibhav ka naam ho, wahan Aanvi ka hi armaan.<br>
+Saath chalein toh raaste bhi mehke-mehke lagte hain,<br>
+In dono ke pyaar mein hi chhupa hai ek poora jahaan. ❤️
+</div>
+
+<!-- 🎆 FUN ENDING MESSAGE -->
+<div class="shayri" style="margin-top:30px; font-size:1.3rem; color:#fff; font-weight:600;">
+🎇 Ab crackers ke saath so jao, <br>
+Baaki surprises December me dekhenge! 😉
 </div>
 
 <!-- 🎇 FIREWORKS -->
 <canvas id="fireworks"></canvas>
 
 <script>
-/* 🎵 START */
 function startExperience(){
     document.getElementById("music").play();
     startSlideshow();
@@ -132,7 +137,7 @@ let slides=document.querySelectorAll(".slideshow img");
 let index=0;
 
 function startSlideshow(){
-    slides[0].style.display="block"; // ensure first image visible
+    slides[0].style.display="block";
     setInterval(()=>{
         slides[index].style.display="none";
         index=(index+1)%slides.length;
@@ -143,16 +148,13 @@ function startSlideshow(){
 /* 🎇 FIREWORKS */
 const canvas=document.getElementById("fireworks");
 const ctx=canvas.getContext("2d");
-
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-
 function createFirework(){
     let x=Math.random()*canvas.width;
     let y=Math.random()*canvas.height/2;
-
     for(let i=0;i<50;i++){
         particles.push({
             x:x,
@@ -163,25 +165,19 @@ function createFirework(){
         });
     }
 }
-
 function animateFireworks(){
     ctx.fillStyle="rgba(0,0,0,0.2)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-
     particles.forEach((p,i)=>{
         p.x+=p.speedX;
         p.y+=p.speedY;
         p.life--;
-
         ctx.fillStyle="white";
         ctx.fillRect(p.x,p.y,2,2);
-
         if(p.life<=0) particles.splice(i,1);
     });
-
     requestAnimationFrame(animateFireworks);
 }
-
 function startFireworks(){
     setInterval(createFirework,1000);
     animateFireworks();
